@@ -1,0 +1,12 @@
+-The application is intended for gathering survey data on people's lifestyle preferences.
+-C# Asp.Net Core
+-Entity framework 
+-Angular
+-TypeScript
+-HTML
+-CSS
+-Docker
+-BootStrap
+-OOP
+-Web API
+-SQL Server
