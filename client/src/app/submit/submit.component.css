@@ -1,0 +1,66 @@
+.survey-form {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form-row label {
+  width: 180px;
+  font-weight: bold;
+}
+
+.form-row input[type="text"],
+.form-row input[type="email"],
+.form-row input[type="tel"],
+.form-row input[type="date"] {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid  #2196F3;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: none;
+}
+
+.food-row div label {
+  margin-right: 15px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: black;
+  cursor: pointer;
+}
+
+.rating-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.rating-table th,
+.rating-table td {
+  border: 1px solid  #2196F3;
+  text-align: center;
+  padding: 8px;
+}
+
+button[type="submit"] {
+  background-color:  #2196F3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+ 
+  cursor: not-allowed;
+}

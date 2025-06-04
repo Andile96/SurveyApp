@@ -1,0 +1,58 @@
+<form [formGroup]="surveyForm" (ngSubmit)="onSubmit()" class="survey-form">
+  <h3>Personal Details :</h3>
+
+  <div class="form-row">
+    <label for="fullName">Full Names</label>
+    <input id="fullName" formControlName="fullName" type="text" required />
+  </div>
+
+  <div class="form-row">
+    <label for="Email">Email</label>
+    <input id="Email" formControlName="email" type="email" required />
+  </div>
+
+  <div class="form-row">
+    <label for="DoB">Date of Birth</label>
+    <input id="DoB" formControlName="dateOfBirth" type="date" required />
+  </div>
+
+  <div class="form-row">
+    <label for="ContactNumber">Contact Number</label>
+    <input id="ContactNumber" formControlName="contactNumber" type="tel" required />
+  </div>
+
+  <div class="form-row food-row">
+    <label>What is your favorite food?</label>
+    <div formGroupName="favoriteFoods">
+      <label><input type="checkbox" formControlName="Pizza" /> Pizza</label>
+      <label><input type="checkbox" formControlName="Pasta" /> Pasta</label>
+      <label><input type="checkbox" formControlName="PapAndWors" /> Pap and Wors</label>
+      <label><input type="checkbox" formControlName="Other" /> Other</label>
+    </div>
+  </div>
+
+  <p>Please rate your level of agreement on a scale from 1 to 5, with 1 being "strongly agree" and 5 being "strongly disagree."</p>
+
+  <table class="rating-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Strongly Agree</th>
+        <th>Agree</th>
+        <th>Neutral</th>
+        <th>Disagree</th>
+        <th>Strongly Disagree</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let field of ['watchingMoviesRating', 'listeningRadioRating', 'eatingOutRating', 'watchingTvRating']; let i = index">
+        <td>{{ ['I like to watch movies', 'I like to listen to radio', 'I like to eat out', 'I like to watch TV'][i] }}</td>
+        <td *ngFor="let val of [1, 2, 3, 4, 5]">
+          <input type="radio" [formControlName]="field" [value]="val" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button type="submit" [disabled]="surveyForm.invalid">SUBMIT</button>
+</form>

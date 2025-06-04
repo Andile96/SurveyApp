@@ -32,7 +32,7 @@ namespace API.Controllers
             };
 
             await surveyRepository.AddSurveyAsync(survey);
-            return Ok("Survey submitted successfully.");
+            return Ok(new { message = "Survey submitted successfully." });
         }
         [HttpGet]
         public async Task<IActionResult> GetSurveyStats()
